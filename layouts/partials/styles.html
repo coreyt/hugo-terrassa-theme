@@ -7,3 +7,14 @@
 {{ $css := $bundle | resources.Minify | resources.Fingerprint "sha512" }}
 
 <link rel="stylesheet" href="{{ $css.Permalink }}">
+
+<!-- from Blackburn -->
+  {{ $purecss := "https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/" }}
+  <link rel="stylesheet" href="{{ $purecss }}pure-min.css">
+
+  {{ "<!--[if lte IE 8]>" | safeHTML }}
+  <link rel="stylesheet" href="{{ $purecss }}grids-responsive-old-ie-min.css">
+  {{ "<![endif]-->" | safeHTML }}
+  {{ "<!--[if gt IE 8]><!-->" | safeHTML }}
+  <link rel="stylesheet" href="{{ $purecss }}grids-responsive-min.css">
+  {{ "<!--<![endif]-->" | safeHTML }}
