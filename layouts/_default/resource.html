@@ -9,12 +9,12 @@
         {{ if ne .Type "page" }}
         {{ if and $.Site.Params.posts.showDate $.Site.Params.posts.showAuthor }}
         <p class="post__date date">
-            {{ dateFormat $.Site.Params.posts.dateFormat .Date }} By {{ $.Params.author }}.
+            {{ dateFormat $.Site.Params.posts.dateFormat .Date }} by {{ $.Params.author }}
         </p>
         {{ else if $.Site.Params.posts.showDate }}
         <p class="post__date date">{{ dateFormat $.Site.Params.posts.dateFormat .Date }}</p>
         {{ else if $.Site.Params.posts.showAuthor }}
-        <p class="post__author author">By {{ $.Params.author }}.</p>
+        <p class="post__author author">by {{ $.Params.author }}</p>
         {{ end }}
         {{ end }}
     </header>

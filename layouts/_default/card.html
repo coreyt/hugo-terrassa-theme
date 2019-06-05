@@ -8,18 +8,18 @@
         {{ if ne .Type "page" }}
         {{ if and $.Site.Params.posts.showDate $.Site.Params.posts.showAuthor }}
         <p class="card__header__date date">
-            {{ dateFormat $.Site.Params.posts.dateFormat .Date }} By {{ $.Params.author }}.
+            {{ dateFormat $.Site.Params.posts.dateFormat .Date }} by {{ $.Params.author }}
         </p>
         {{ else if $.Site.Params.posts.showDate }}
         <p class="card__header__date date">{{ dateFormat $.Site.Params.posts.dateFormat .Date }}</p>
         {{ else if $.Site.Params.posts.showAuthor }}
-        <p class="card__header__author author">By {{ $.Params.author }}.</p>
+        <p class="card__header__author author">by {{ $.Params.author }}</p>
         {{ end }}
         {{ end }}
     </header>
 
     <main class="card__body">
-        {{ .Content | truncate 480 }}
+        {{ .Content | truncate 200 }}
     </main>
 
     <footer class="card__footer">
